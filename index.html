@@ -174,7 +174,7 @@
 									<div class="well">
 										<div class="row">
 											<label for="select">Geography</label> <select
-												name="geographySelects" ng-model="geography"
+												name="geographySelects" ng-model="geography" multiple
 												ng-options="geographySelect as geographySelect for geographySelect in geographySelects"
 												ng-disabled="dateRangeSelectval === ''" class="form-control">
 											</select>
@@ -185,14 +185,7 @@
 						</div>
 						<!-- /.container-fluid -->
 
-						<div class="row" ng-show="simulatorEnabled">
-							<div class="col-lg-11">
-								<div class="form-group">
-									<input type="submit" value="Go"
-										class="btn btn-primary pull-right" />
-								</div>
-							</div>
-						</div>
+
 						<div class="row">
 							<div class="col-lg-12">&nbsp</div>
 						</div>
@@ -232,7 +225,8 @@
 											<tbody>
 											
 												<tr
-													ng-repeat="personalDetail in personalDetails   | filter:filterByCategory | filter:geography">
+													ng-repeat="personalDetail in personalDetails   | filter:filterByCategory | filter:filterByGeography">
+													
 													
 													<td>{{personalDetail.flavour}}</td>
 													<td>{{personalDetail.packContent}}</td>
